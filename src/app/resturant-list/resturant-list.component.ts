@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-
+import {RestlistService} from '../restlist.service'
 @Component({
   selector: 'app-resturant-list',
   templateUrl: './resturant-list.component.html',
@@ -64,7 +64,7 @@ export class ResturantListComponent implements OnInit {
           isActive:false,
           restaurantAddress:"Park Street",
           rating:5,dish:[{},{}]}];
-  constructor(private router:Router) { 
+  constructor(private router:Router,private _restlistService: RestlistService) { 
   }
 
   ngOnInit(): void {

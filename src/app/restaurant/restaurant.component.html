@@ -1,10 +1,9 @@
 <ul>
-            <li *ngFor="let restaurant of restaurants" class="restlist">
-                <mat-card-title>{{restaurant.restaurantName}}</mat-card-title><br>
-                 <mat-card-subtitle>{{"Location: "+restaurant.restaurantAddress}}</mat-card-subtitle><br>
-                  <mat-card-content>{{"Rating: "+restaurant.rating}}</mat-card-content><br>
-                 <mat-card-actions>
-          			<button md-button (click)="onSelect(restaurant)">Click to Check Menu</button>
-        		</mat-card-actions>
+            <li *ngFor="let d of restaurants[restaurantId-1].dish" class="dishlist">
+                <mat-card>
+                <mat-card-title>{{d.dishName}}</mat-card-title>
+                <mat-card-subtitle>{{d.shortDescription}}</mat-card-subtitle>
+          			<button mat-button (click)="addtoCart(d)">Add to Cart</button>
+          		</mat-card>
             </li>
 </ul>

@@ -1,15 +1,14 @@
-import { Component, OnInit, Input} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector:'app-restaurant',
-  templateUrl: './restaurant.component.html',
-  styleUrls: ['./restaurant.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class RestaurantComponent implements OnInit {
-  public restaurantId;
-   restaurants=[
-    {restaurantId:1,
+export class RestlistService {
+
+  constructor() { }
+
+  getEmployees(){
+  	return[{restaurantId:1,
       restaurantName:"Panna",
       isActive:true,
       restaurantAddress:"Behala",
@@ -63,17 +62,5 @@ export class RestaurantComponent implements OnInit {
           isActive:false,
           restaurantAddress:"Park Street",
           rating:5,dish:[{},{}]}];
-  constructor(private route:ActivatedRoute) { 
   }
-  ngOnInit(): void {
-    let id=parseInt(this.route.snapshot.paramMap.get('id'));
-    this.restaurantId=id;
-    console.log(this.restaurants[id-1]);
-  }
-  addtoCart(d){
-    console.log(d);
-    alert(d.dishName+" added to Cart");
-  }
-
-
 }
