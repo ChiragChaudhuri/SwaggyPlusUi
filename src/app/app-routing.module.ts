@@ -9,10 +9,13 @@ import {CartComponent} from './cart/cart.component';
 import { AddrestComponent } from './addrest/addrest.component';
 import { EditrestComponent } from './editrest/editrest.component';
 import { ErrorComponent } from './error/error.component';
+import  {AboutComponent} from './about/about.component';
 
 
 const routes: Routes = [{path:'',
            component:AppComponent},
+           {path:'about',
+             component:AboutComponent},
             {path:'user-dashboard',
                 component:UserDashboardComponent},
             {path:'admin-dashboard',
