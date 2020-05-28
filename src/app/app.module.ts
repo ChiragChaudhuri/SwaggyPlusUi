@@ -8,9 +8,12 @@ import {MaterialModule} from './material/material.module'
 import {RestlistService} from './restlist.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FooterComponent } from './footer/footer.component';
-import { AboutComponent } from './about/about.component'
-
-
+import { AboutComponent } from './about/about.component';
+import { LogoutComponent } from './logout/logout.component';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +22,17 @@ import { AboutComponent } from './about/about.component'
     WelcomeComponent,
     FooterComponent,
     AboutComponent,
+    LogoutComponent,
+    LoginComponent,
+    UserComponent,
+    AdminloginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [RestlistService],
   bootstrap: [AppComponent]

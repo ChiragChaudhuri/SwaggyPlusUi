@@ -10,6 +10,7 @@ export class AddrestComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  	console.log("Hello")
   }
 
 }

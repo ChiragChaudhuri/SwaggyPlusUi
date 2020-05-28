@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {RestlistService} from '../restlist.service'
+import {DishlistService} from '../dishlist.service'
 
 @Component({
   selector:'app-restaurant',
@@ -9,19 +9,22 @@ import {RestlistService} from '../restlist.service'
 })
 export class RestaurantComponent implements OnInit {
   public restaurantId;
-   restaurants : any;
-  constructor(private route:ActivatedRoute,private _restlistService: RestlistService) { 
+   dishes : any;
+   selectdish =[];
+  constructor(private route:ActivatedRoute,private _dishlistService: DishlistService) { 
   }
   ngOnInit(): void {
     let id=parseInt(this.route.snapshot.paramMap.get('id'));
-    this.restaurants=this._restlistService.getRestaurants();
+    this.dishes=this._dishlistService.getDishes();
     this.restaurantId=id;
-    console.log(this.restaurants[id-1]);
+    console.log(this.restaurantId);
+    this.selectdish=this.dishes.filter(function(dishes){
+      return (this.dish.resid==this.restaurantId)
+    })
+    console.log(this.dishes);
   }
   addtoCart(d){
     console.log(d);
     alert(d.dishName+" added to Cart");
   }
-
-
 }
