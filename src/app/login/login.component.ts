@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
     ) {
       this.router.navigate(['/restaurant-list'])
       this.invalidLogin = false
-    } else{
+    } else
+    {
       this.invalidLogin = true
       alert("Invalid Login Details")}
   }

@@ -20,7 +20,6 @@ export class LogoutComponent implements OnInit {
   ngOnInit() {
     console.log("10")
     this.authentocationService.logOut();
-    this.adminauth.logOut();
     this.router.navigate(['/about']);
   }
 
