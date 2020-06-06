@@ -24,4 +24,8 @@ export class AdminloginComponent implements OnInit {
     } else
       this.invalidLogin = true
   }
+  jumpSignUp()
+  {
+        this.router.navigate(['/admin-signup'])
+  }
 }

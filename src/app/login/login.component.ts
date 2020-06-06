@@ -21,7 +21,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
   }
-
+  jumpSignUp()
+  {
+    this.router.navigate(['/user-signup'])
+  }
   checkLogin() {
    /* if (this.loginservice.authenticate(this.username,this.password)
     ) {
@@ -32,7 +35,6 @@ export class LoginComponent implements OnInit {
       this.invalidLogin = true
       alert("Invalid Login Details")}
   } */
-
   let userId: any
   let userName: any
   this.user =new  User(this.username, this.password)

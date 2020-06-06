@@ -1,14 +1,17 @@
 <div class="container">
   <br>
   <div class="form-group">
-    User Name <br>
-    <input type="text" class="form-control" name="username" [(ngModel)]="username" placeholder="Enter Username"><br>
+    Admin ID <br>
+    <input type="text" class="form-control" name="username" [(ngModel)]="username" placeholder="Enter Admin ID"><br>
     Password <br>
     <input type="password" class="form-control" name="password" [(ngModel)]="password"
     placeholder="Enter Password"><br>
   </div>
   <button (click)=checkLogin() class="btn btn-success">
     Login
+  </button>
+  <button (click)=jumpSignUp() class="btn btn-success">
+    Register as New Admin
   </button>
   <br>
   <br>

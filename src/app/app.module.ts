@@ -15,6 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { UsersignupComponent } from './usersignup/usersignup.component';
+import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     LoginComponent,
     UserComponent,
     AdminloginComponent,
+    UsersignupComponent,
+    AdminsignupComponent,
   ],
   imports: [
     BrowserModule,

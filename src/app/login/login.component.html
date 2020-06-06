@@ -1,8 +1,8 @@
 <div class="container">
   <br>
   <div class="form-group">
-    User Name <br>
-    <input type="text" class="form-control" name="username" [(ngModel)]="username" placeholder="Enter Username"><br>
+    User ID <br>
+    <input type="text" class="form-control" name="username" [(ngModel)]="username" placeholder="Enter UserID"><br>
     Password <br>
     <input type="password" class="form-control" name="password" [(ngModel)]="password"
     placeholder="Enter Password"><br>
@@ -10,6 +10,7 @@
   <button (click)=checkLogin() class="btn btn-success">
     Login
   </button>
+  <button (click)=jumpSignUp() class="btn btn-success">New User Registration</button>
   <br>
   <br>
 </div>

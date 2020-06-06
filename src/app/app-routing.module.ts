@@ -16,6 +16,8 @@ import {AdminloginComponent} from './adminlogin/adminlogin.component';
 import { AuthGuardService } from './service/auth-guard.service';
 import {AdminGuardService} from './service/admin-guard.service';
 import { WelcomeComponent } from './welcome/welcome.component';
+import  {AdminsignupComponent} from './adminsignup/adminsignup.component';
+import {UsersignupComponent} from './usersignup/usersignup.component';
 
 const routes: Routes = [{path:'',
            component:WelcomeComponent},
@@ -41,6 +43,10 @@ const routes: Routes = [{path:'',
                     component:AdminloginComponent},
           {path:'logout',
                  component:LogoutComponent },
+          {path:'/user-signup',
+                  component:UsersignupComponent},
+          {path:'/admin-signup',
+                  component:AdminsignupComponent},
           {path:'**',
                 component:ErrorComponent},
                 ];
