@@ -15,9 +15,10 @@ import { LogoutComponent } from './logout/logout.component';
 import {AdminloginComponent} from './adminlogin/adminlogin.component';
 import { AuthGuardService } from './service/auth-guard.service';
 import {AdminGuardService} from './service/admin-guard.service';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [{path:'',
-           component:AppComponent},
+           component:WelcomeComponent},
            {path:'about',
              component:AboutComponent},
             {path:'user-dashboard',
@@ -27,19 +28,19 @@ const routes: Routes = [{path:'',
             {path:'restaurant-list',
                 component:ResturantListComponent,
                   children: [{path:'add',
-                component:AddrestComponent,canActivate:[AdminGuardService]},
+                component:AddrestComponent},
                              {path:'edit',
-                component:EditrestComponent,canActivate:[AdminGuardService]}]},
+                component:EditrestComponent}]},
             {path:'restaurant/:id',
-                component:RestaurantComponent ,canActivate:[AuthGuardService]},
+                component:RestaurantComponent },
           {path:'cart',
-                component:CartComponent ,canActivate:[AuthGuardService]},
+                component:CartComponent },
           {path:'login',
                  component:LoginComponent},
           {path:'admin-login',
                     component:AdminloginComponent},
           {path:'logout',
-                 component:LogoutComponent ,canActivate:[AuthGuardService]},
+                 component:LogoutComponent },
           {path:'**',
                 component:ErrorComponent},
                 ];

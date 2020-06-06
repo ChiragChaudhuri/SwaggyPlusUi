@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestlistService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getRestaurants(){
   	return[{restaurantId:1,
@@ -96,4 +97,9 @@ export class RestlistService {
          freeDelivery:false,
          price:35}]*/}];
   }
+
+  showAllRes(){
+    return this.http.get(`http://localhost:8080/restaurant/showrestaurants`)
+  }
+
 }
