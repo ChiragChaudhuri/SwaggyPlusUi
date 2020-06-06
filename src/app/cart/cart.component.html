@@ -1,1 +1,11 @@
-<p>cart works!</p>
+<ul>
+    <li *ngFor="let d of dish" class="dishlist">
+        
+        <mat-card-title >{{d.dishName}}</mat-card-title>
+        <mat-card-title >{{d.price}}</mat-card-title>
+        <button (click)="Remove(d.dish_id)">Remove</button>
+
+    </li>
+    <hr>
+</ul>
+<h2> {{price}} </h2>

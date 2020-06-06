@@ -1,9 +1,9 @@
 <ul>
-            <li *ngFor="let d of dishes" class="dishlist">
-                <mat-card *ngIf="d.resid==restaurantId">
+            <li *ngFor="let d of selectdish" class="dishlist">
+                
                 <mat-card-title >{{d.dishName}}</mat-card-title>
                 <mat-card-subtitle>{{d.shortDescription}}</mat-card-subtitle>
+                <mat-card-title >{{d.price}}</mat-card-title>
           			<button mat-button (click)="addtoCart(d)">Add to Cart</button>
-          		</mat-card>
             </li>
 </ul>

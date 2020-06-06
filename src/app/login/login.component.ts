@@ -33,10 +33,21 @@ export class LoginComponent implements OnInit {
       alert("Invalid Login Details")}
   } */
 
+  let userId: any
+  let userName: any
   this.user =new  User(this.username, this.password)
   console.log(this.user)
   this.loginservice.loginHandle(this.user).subscribe(
     data=> {console.log(data)
+      userId= data
+      this.loginservice.getUserName(userId).subscribe(
+        data=> {
+          userName = data
+          sessionStorage.setItem('userName', userName)
+          console.log(userName)
+        }
+      )
+      sessionStorage.setItem('userId',userId)
       this.router.navigate(['/restaurant-list'])
       this.invalidLogin = false
     } ,

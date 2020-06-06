@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {DishlistService} from '../dishlist.service'
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector:'app-restaurant',
@@ -11,17 +12,10 @@ export class RestaurantComponent implements OnInit {
   public restaurantId;
    dishes : any;
    selectdish : any;
-  constructor(private route:ActivatedRoute,private _dishlistService: DishlistService) { 
+  constructor(private route:ActivatedRoute,private _dishlistService: DishlistService, private service:AuthenticationService) { 
   }
   ngOnInit(): void {
      let id=parseInt(this.route.snapshot.paramMap.get('id'));
-    // this.dishes=this._dishlistService.getDishes();
-    // this.restaurantId=id;
-    // console.log(this.restaurantId);
-    // this.selectdish=this.dishes.filter(function(dishes){
-    //   return (this.dish.resid==this.restaurantId)
-    // })
-    // console.log(this.dishes);
 
     this._dishlistService.getDishes(id).subscribe(
       data=> {console.log(data)
@@ -33,7 +27,11 @@ export class RestaurantComponent implements OnInit {
 
   }
   addtoCart(d){
+    let userId = sessionStorage.getItem('userId')
     console.log(d);
+    this.service.addToCart(userId, d.dish_id).subscribe(
+      data=> {console.log(data)}
+    )
     alert(d.dishName+" added to Cart");
   }
 }

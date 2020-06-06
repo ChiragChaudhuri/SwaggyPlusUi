@@ -4,8 +4,9 @@
   <button mat-button color="warn" routerLink="/admin-dashboard">Admin Dashboard</button>
   <button mat-button color="warn" routerLink="/user-dashboard">User Dashboard</button>
   <button mat-button color="warn" routerLink="/restaurant-list">Restaurant List</button>
-  <button mat-button color="warn" routerLink="/cart">Cart</button>
+  <button mat-button color="warn" (click)="cart()">Cart</button>
   <button *ngIf="!(loginService.isUserLoggedIn()) && !(adminlogin.isAdminLoggedIn())" mat-button color="warn" routerLink="/login">User Login</button>
   <button *ngIf="!(loginService.isUserLoggedIn()) && !(adminlogin.isAdminLoggedIn())" mat-button color="warn" routerLink="/admin-login">Admin Login</button>
   <button *ngIf="(loginService.isUserLoggedIn()) || (adminlogin.isAdminLoggedIn())" mat-button color="warn" routerLink="/logout">Logout</button>
+  <button *ngIf="loginService.isUserLoggedIn()"> {{this.loginService.getCurrentUserName()}} </button>
 </mat-toolbar>
